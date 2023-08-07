@@ -1,15 +1,36 @@
 package com.company.bookstore.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Publisher {
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "publisher")
+public class Publisher implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "publisher_id")
+    private int id;
+
     private String name;
     private String street;
     private String city;
     private String state;
+    @Column(name = "postal_code")
     private String postalCode;
     private String phone;
     private String email;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -66,6 +87,7 @@ public class Publisher {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     @Override
     public boolean equals(Object o) {
