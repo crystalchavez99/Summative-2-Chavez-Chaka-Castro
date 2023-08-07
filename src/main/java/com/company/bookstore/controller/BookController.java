@@ -11,19 +11,18 @@ import java.util.Optional;
 
 @RestController
 public class BookController {
-
     @Autowired
-    BookRepository bookRepository;
+    BookRepository repo;
 
     @PostMapping("/books")
     @ResponseStatus(HttpStatus.CREATED)
     public Book addBook(@RequestBody Book book) {
-        return bookRepository.save(book);
+        return repo.save(book);
     }
 
     @GetMapping("/books/{id}")
     public Book getBookById(@PathVariable int id) {
-        Optional<Book> returnVal = bookRepository.findById(id);
+        Optional<Book> returnVal = repo.findById(id);
         if (returnVal.isPresent()) {
             return returnVal.get();
         }
@@ -31,26 +30,25 @@ public class BookController {
     }
 
     @GetMapping("/books")
-    public List<Book> getBooks() {
-        return bookRepository.findAll();
+    public List<Book> getAllBooks() {
+        return repo.findAll();
     }
 
     @PutMapping("/books")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateBook(@RequestBody Book book) {
-        bookRepository.save(book);
+        repo.save(book);
     }
 
     @DeleteMapping("/books/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBookById(@PathVariable int id) {
-        bookRepository.deleteById(id);
+        repo.deleteById(id);
     }
 
     @GetMapping("/books/author/{id}")
-    public List<Book> getBooksByAuthor(@PathVariable int id) {
-        return bookRepository.findBookByAuthorId(id);
+    public List<Book> getAllBooksByAuthor(@PathVariable int id) {
+        return repo.findByAuthorId(id);
     }
-
 
 }
