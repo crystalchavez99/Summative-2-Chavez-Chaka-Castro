@@ -1,12 +1,14 @@
 package com.company.bookstore.controller;
 
+import com.company.bookstore.models.Author;
 import com.company.bookstore.models.Book;
+import com.company.bookstore.repository.AuthorRepository;
 import com.company.bookstore.repository.BookRepository;
 
 
 import com.company.bookstore.models.Publisher;
-import com.company.bookstore.repository.PublisherRepository;
 
+import com.company.bookstore.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
