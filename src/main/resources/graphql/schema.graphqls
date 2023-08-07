@@ -14,9 +14,9 @@ type Book {
     id: ID!
     isbn: String!
     publishDate: String!
-    author: Author
+    author: Author!
     title: String!
-    publisher: Publisher
+    publisher: Publisher!
     price: Float!
 }
 
