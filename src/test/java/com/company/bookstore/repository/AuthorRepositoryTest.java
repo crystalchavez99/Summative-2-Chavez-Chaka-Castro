@@ -25,7 +25,7 @@ public class AuthorRepositoryTest {
 
         author = new Author();
         author.setFirstName("Emily");
-        author.setLastName("Brontë");
+        author.setLastName("Bronte");
         author.setStreet("Market Street");
         author.setCity("Thornton");
         author.setState("Yorkshire");

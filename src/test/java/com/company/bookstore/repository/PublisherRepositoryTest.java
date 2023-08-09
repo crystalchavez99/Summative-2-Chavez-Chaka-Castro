@@ -25,7 +25,10 @@ class PublisherRepositoryTest {
         publisher.setName("Test Publisher");
         publisher.setStreet("123 Test Street");
         publisher.setCity("Test City");
-        // Set other properties...
+        publisher.setState("Test State");
+        publisher.setPostalCode("00000");
+        publisher.setPhone("555-6789");
+        publisher.setEmail("email@gmail.com");
 
         publisher = publisherRepository.save(publisher);
     }
