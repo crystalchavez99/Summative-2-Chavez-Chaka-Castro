@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -34,12 +34,13 @@ class BookControllerTest {
     @BeforeEach
     public void setUp() throws Exception {
         book = new Book();
+        LocalDate date = LocalDate.parse("2020-01-08");
         book.setAuthorId(1);
         book.setIsbn("5583169494121");
         book.setPrice(new BigDecimal(55.55));
         book.setTitle("Testing For Dummies");
         book.setPublisherId(1);
-        book.setPublishDate(new Date(2001-01-01));
+        book.setPublishDate(date);
     }
 
     @Test

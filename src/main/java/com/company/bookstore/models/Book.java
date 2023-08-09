@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class Book implements Serializable {
     private int id;
 
     private String isbn;
-    private Date publishDate;
+    private LocalDate publishDate;
 
     @Column(name="author_id")
     private int authorId;
@@ -44,11 +45,11 @@ public class Book implements Serializable {
         this.isbn = isbn;
     }
 
-    public Date getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 

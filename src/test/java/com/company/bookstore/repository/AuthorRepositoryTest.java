@@ -28,10 +28,10 @@ public class AuthorRepositoryTest {
         author.setLastName("Bronte");
         author.setStreet("Market Street");
         author.setCity("Thornton");
-        author.setState("Yorkshire");
+        author.setState("CA");
         author.setPostalCode("00000");
         author.setPhone("000-123-4567");
-        author.setEmail("wutheringheights@gmail.com");
+        author.setEmail("wuthering@gmail.com");
 
         author = authorRepository.save(author);
     }
