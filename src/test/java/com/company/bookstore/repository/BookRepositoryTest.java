@@ -60,14 +60,14 @@ class BookRepositoryTest {
         publisher = publisherRepository.save(publisher);
 
         book = new Book();
-        LocalDate date = LocalDate.parse("2020-01-08");
-        BigDecimal decimal = new BigDecimal(55.55);
+        LocalDate date = LocalDate.of(2020,1,8);
+        BigDecimal decimal = new BigDecimal("24.99");
         MathContext mc = new MathContext(4);
 
         book.setAuthorId(author.getId());
-        book.setIsbn("5583169494121");
+        book.setIsbn("1234567890987654321");
         book.setPrice(decimal.round(mc));
-        book.setTitle("Testing For Dummies");
+        book.setTitle("Testing Books");
         book.setPublisherId(publisher.getId());
         book.setPublishDate(date);
 

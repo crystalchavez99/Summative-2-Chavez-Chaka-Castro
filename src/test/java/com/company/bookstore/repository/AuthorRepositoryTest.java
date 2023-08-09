@@ -1,6 +1,7 @@
 package com.company.bookstore.repository;
 
 import com.company.bookstore.models.Author;
+import com.company.bookstore.models.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,21 @@ public class AuthorRepositoryTest {
     @Autowired
     private AuthorRepository authorRepository;
 
+    @Autowired
+    private BookRepository bookRepository;
+
+    @Autowired
+    private PublisherRepository publisherRepository;
+
+
+
     private Author author;
 
     @BeforeEach
     public void setUp() {
+        bookRepository.deleteAll();
         authorRepository.deleteAll();
+        publisherRepository.deleteAll();
 
         author = new Author();
         author.setFirstName("Emily");

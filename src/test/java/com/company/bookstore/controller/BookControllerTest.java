@@ -34,13 +34,13 @@ class BookControllerTest {
     @BeforeEach
     public void setUp() throws Exception {
         book = new Book();
-        LocalDate date = LocalDate.parse("2020-01-08");
+        LocalDate date = LocalDate.of(2020,1,8);
         book.setAuthorId(1);
-        book.setIsbn("5583169494121");
-        book.setPrice(new BigDecimal(55.55));
-        book.setTitle("Testing For Dummies");
+        book.setIsbn("1234567890987654321");
+        book.setPrice(new BigDecimal("24.99"));
+        book.setTitle("Testing Books");
         book.setPublisherId(1);
-        book.setPublishDate(date);
+        //book.setPublishDate(date);
     }
 
     @Test
