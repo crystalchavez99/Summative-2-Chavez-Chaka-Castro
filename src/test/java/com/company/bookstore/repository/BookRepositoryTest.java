@@ -65,7 +65,7 @@ class BookRepositoryTest {
         MathContext mc = new MathContext(4);
 
         book.setAuthorId(author.getId());
-        book.setIsbn("1234567890987654321");
+        book.setIsbn("12345678");
         book.setPrice(decimal.round(mc));
         book.setTitle("Testing Books");
         book.setPublisherId(publisher.getId());
